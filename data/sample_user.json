@@ -1,0 +1,103 @@
+{
+    "user_id": "user_ashwin001",
+    "name": "Ashwin Kumar",
+    "location": "Tiruppur, India",
+    "preferences": {
+        "favorite_types": [
+            "Scotch",
+            "Bourbon"
+        ],
+        "preferred_age_range": [
+            10,
+            18
+        ],
+        "preferred_proof_range": [
+            90,
+            110
+        ],
+        "price_sensitivity": "medium",
+        "interested_in_collectibles": true
+    },
+    "collection": [
+        {
+            "id": "btl_001",
+            "name": "Glenfiddich 15 Year Old",
+            "brand": "Glenfiddich",
+            "type": "Scotch",
+            "age": 15,
+            "proof": 93,
+            "size": "750ml",
+            "price": 65.0,
+            "rating": 4.5,
+            "tags": [
+                "favorite"
+            ]
+        },
+        {
+            "id": "btl_002",
+            "name": "Blanton's Single Barrel",
+            "brand": "Blanton's",
+            "type": "Bourbon",
+            "age": 8,
+            "proof": 93,
+            "size": "750ml",
+            "price": 85.0,
+            "rating": 4.8,
+            "tags": [
+                "favorite"
+            ]
+        },
+        {
+            "id": "btl_003",
+            "name": "Ardbeg Uigeadail",
+            "brand": "Ardbeg",
+            "type": "Scotch",
+            "age": 12,
+            "proof": 108.4,
+            "size": "750ml",
+            "price": 90.0,
+            "rating": 4.7,
+            "tags": []
+        },
+        {
+            "id": "btl_004",
+            "name": "Buffalo Trace",
+            "brand": "Buffalo Trace",
+            "type": "Bourbon",
+            "age": 6,
+            "proof": 90,
+            "size": "750ml",
+            "price": 30.0,
+            "rating": 4.3,
+            "tags": []
+        }
+    ],
+    "wishlist": [
+        {
+            "name": "Lagavulin 16 Year",
+            "brand": "Lagavulin",
+            "type": "Scotch",
+            "tags": [
+                "wishlist"
+            ]
+        },
+        {
+            "name": "Yamazaki 18 Year",
+            "brand": "Yamazaki",
+            "type": "Japanese Whisky",
+            "tags": [
+                "wishlist"
+            ]
+        },
+        {
+            "name": "Pappy Van Winkle 15 Year",
+            "brand": "Old Rip Van Winkle",
+            "type": "Bourbon",
+            "tags": [
+                "wishlist",
+                "collectible"
+            ]
+        }
+    ],
+    "last_login": "2025-04-17T14:30:00Z"
+}
