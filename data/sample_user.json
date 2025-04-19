@@ -20,8 +20,8 @@
     },
     "collection": [
         {
-            "id": "btl_001",
-            "name": "Glenfiddich 15 Year Old",
+            "id": "4864",
+            "name": "Glenfiddich Single Malt Scotch Whiskey 12 Years",
             "brand": "Glenfiddich",
             "type": "Scotch",
             "age": 15,
@@ -34,8 +34,8 @@
             ]
         },
         {
-            "id": "btl_002",
-            "name": "Blanton's Single Barrel",
+            "id": "159",
+            "name": "Blanton's Gold Edition",
             "brand": "Blanton's",
             "type": "Bourbon",
             "age": 8,
@@ -48,9 +48,9 @@
             ]
         },
         {
-            "id": "btl_003",
-            "name": "Ardbeg Uigeadail",
-            "brand": "Ardbeg",
+            "id": "1816",
+            "name": "Wild Turkey Rare Breed",
+            "brand": "Wild Turkey",
             "type": "Scotch",
             "age": 12,
             "proof": 108.4,

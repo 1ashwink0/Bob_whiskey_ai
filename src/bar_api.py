@@ -13,7 +13,7 @@ import requests
 
 import json
 
-# Replace API call with reading your mock user data
+# Replace API call with reading mock user data
 def get_user_bar(username):
     with open("sample_user.json", "r") as f:
         user_data = json.load(f)
