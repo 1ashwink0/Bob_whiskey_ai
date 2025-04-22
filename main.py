@@ -3,7 +3,7 @@ from src.dataset_loader import load_bottle_dataset
 from src.collection_analyzer import analyze_collection
 
 if __name__ == "__main__":
-    username = "your_username_here"  # Replace with real BAXUS username
+    username = str(input())  # Replace with real BAXUS username
 
     # Step 3: Fetch user bar
     try:
