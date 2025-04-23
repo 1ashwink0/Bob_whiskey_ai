@@ -1,7 +1,7 @@
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from scipy.sparse import hstack  # for combining weighted feature matrices
 from sklearn.metrics.pairwise import cosine_similarity
-
+import pandas as pd
 
 
 def recommend_similar_bottles(user_data, bottles_df, top_n=5):
@@ -30,7 +30,7 @@ def recommend_similar_bottles(user_data, bottles_df, top_n=5):
 
     scaled_num = num_scaler.fit_transform(features_df[num_features]) * 0.5  # 👈 weight for numerical
     features_df[cat_features] = features_df[cat_features].astype(str)
-    encoded_cat = cat_encoder.fit_transform(features_df[cat_features]) * 1.5  # 👈 weight for categorical
+    encoded_cat = cat_encoder.fit_transform(features_df[cat_features]) * 2.0  # 👈 weight for categorical
 
     # Combine features with priority given to categorical
     combined_features = hstack([scaled_num, encoded_cat])
@@ -47,5 +47,24 @@ def recommend_similar_bottles(user_data, bottles_df, top_n=5):
     recommendations = bottles_df[~bottles_df["id"].isin(owned_ids)]\
         .sort_values(by="similarity_score", ascending=False).head(top_n)
 
+    # Step 7: Explain recommendations
+    def explain_reason(row):
+        reasons = []
+        for product in collection_products:
+            if product.get("spirit_type") == row["spirit_type"]:
+                reasons.append("same spirit type")
+            if abs(product.get("abv", 0) - row.get("abv", 0)) < 5:
+                reasons.append("similar ABV")
+            if abs(product.get("fair_price", 0) - row.get("fair_price", 0)) < 10:
+                reasons.append("similar price")
+        return ", ".join(set(reasons))
+
+    recommendations["reason"] = recommendations.apply(explain_reason, axis=1)
+    recommendations["relevance"] = pd.cut(
+        recommendations["similarity_score"],
+        bins=[-1, 0.1, 0.25, 1.0],
+        labels=["🔴 Low", "🟡 Medium", "🟢 High"]
+    )
+
     print("\n🎯 Recommended Bottles (Category-Weighted):")
-    print(recommendations[["id", "name", "similarity_score", "spirit_type"]])
+    print(recommendations[["similarity_score", "spirit_type", "relevance", "reason"]])

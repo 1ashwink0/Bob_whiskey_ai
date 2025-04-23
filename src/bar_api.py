@@ -1,5 +1,6 @@
 import requests
 
+
 def get_user_bar(username):
     url = f"http://services.baxus.co/api/bar/user/{username}"
     headers = {"Content-Type": "application/json"}
