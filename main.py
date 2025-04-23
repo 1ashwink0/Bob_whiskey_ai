@@ -1,9 +1,10 @@
 from src.bar_api import get_user_bar
 from src.dataset_loader import load_bottle_dataset
 from src.collection_analyzer import analyze_collection
+from src.bottle_recommendation import recommend_similar_bottles
 
 if __name__ == "__main__":
-    username = str(input())  # Replace with real BAXUS username
+    username = str(input("enter the Username: "))  # Replace with real BAXUS username
 
     # Step 3: Fetch user bar
     try:
@@ -26,6 +27,16 @@ if __name__ == "__main__":
         analyze_collection(user_data, bottles_df)
     except Exception as e:
         print(e)
+
+    # Step 6: Bottle recommendation
+    try:
+        user_data = get_user_bar(username)
+        bottles_df = load_bottle_dataset()
+        recommend_similar_bottles(user_data, bottles_df)
+    except Exception as e:
+        print(e)
+
+
 
 
 

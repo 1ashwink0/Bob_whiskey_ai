@@ -16,3 +16,10 @@ def analyze_collection(user_data, bottles_df):
     print("\n🍸 User's Collection matching with Dataset:")
     print(user_collection_df[["id", "name", "ranking", "bar_count"]])
     print(f"\n✅ Owned: {owned_count}")
+
+
+
+
+
+
+
